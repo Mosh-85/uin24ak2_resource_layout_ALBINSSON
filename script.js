@@ -13,7 +13,7 @@ nav[0].innerHTML = navCategory
 document.querySelector('ul').addEventListener('mouseover', function(event) {
     //visst event.target.tagName er lik A
     if (event.target.tagName === 'A') {
-
+        //henter ut alle a tagger i ul
         const tabs = document.querySelectorAll('ul a')
         console.log(tabs)
         //fjerner klassen active fra alle tabs
@@ -25,7 +25,7 @@ document.querySelector('ul').addEventListener('mouseover', function(event) {
         //fjerner # fra href og lagrer denne i id sånn at vi kan få samme id som artikkelen
         const id = event.target.getAttribute('href').slice(1)
         console.log(id)
-        //lagrer resursen som har samme id som href i article
+        //kontrolerer om id er lik category i resources.js
         const article = resources.find(resource => resource.category === id)
         console.log(article)
 
