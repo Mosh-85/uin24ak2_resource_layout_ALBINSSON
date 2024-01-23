@@ -68,7 +68,7 @@ nav ul li a:hover{
 
 main{
     background-color: var(--white);
-    height: 450px;
+    height: 550px;
     width: 100%;
     margin-top: .5rem;
 }
@@ -109,6 +109,7 @@ main article ul{
 
     main {
         width: 1245px;
+        min-height: 400px;
     }
     
     
