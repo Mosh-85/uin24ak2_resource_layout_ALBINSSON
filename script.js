@@ -10,7 +10,8 @@ nav[0].innerHTML = navCategory
 
 
 //søker i ul, med eventlistner mouseover som starter queryselector i ul
-document.querySelector('ul').addEventListener('mouseover', function(event) {
+//har brukt ai til å få event.target.tagname === 'A' å virke. 
+document.querySelector('ul').addEventListener('click', function(event) {
     //visst event.target.tagName er lik A
     if (event.target.tagName === 'A') {
         //henter ut alle a tagger i ul
@@ -20,8 +21,9 @@ document.querySelector('ul').addEventListener('mouseover', function(event) {
         //legger til klassen active i style.css på den som er markert.
         event.target.classList.add('active')
 
-
         //fjerner # fra href og lagrer denne i id sånn at vi kan få samme id som artikkelen
+        //visst jeg fjerner # fra a href i nav så blir det linket feil. derfor har jeg # i href. 
+        //burde kanskje brukt en annen løsning ev. button. 
         const id = event.target.getAttribute('href').slice(1)
         //kontrolerer om id er lik category i resources.js
         const article = resources.find(resource => resource.category === id)
